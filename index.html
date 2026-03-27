@@ -2,155 +2,61 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Página no encontrada</title>
+    <title>404 con Murciélago</title>
     <style>
         body {
-            background: #d1d8e0;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            overflow: hidden;
-            margin: 0;
+            background: #1a1a2e;
             height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-
-        /* Contenedor de la animación */
-        .animation_container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin-bottom: 20px;
-        }
-
-        /* El Cavernícola (Círculo con boca) */
-        .caveman {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: #333;
-            border-radius: 50%;
-            top: 50px;
-            left: 50px;
-            z-index: 2;
-            animation: moveHead 2s infinite ease-in-out;
-        }
-
-        /* Ojos del cavernícola */
-        .caveman::before {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: #fff;
-            border-radius: 50%;
-            top: 30px;
-            left: 25px;
-            box-shadow: 50px 0 0 #fff; /* Segundo ojo */
-        }
-
-        /* Boca del cavernícola */
-        .caveman::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 20px;
-            background: #000;
-            border-radius: 0 0 20px 20px;
-            bottom: 20px;
-            left: 30px;
-            animation: eat 0.5s infinite alternate;
-        }
-
-        /* Los Cables */
-        .cable {
-            position: absolute;
-            width: 150px;
-            height: 10px;
-            background: #e84118;
-            top: 90px;
-            right: -50px;
-            border-radius: 5px;
-            animation: moveCable 2s infinite linear;
-        }
-
-        .cable::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #fbc531;
-            border-radius: 50%;
-            right: 0;
-            top: -5px;
-        }
-
-        /* Textos y Botones (Tus estilos originales corregidos) */
-        .contant_box_404 {
-            margin-top: 20px;
-            color: #333;
-        }
-
-        h1 {
-            font-size: 80px;
             margin: 0;
-            color: #2f3640;
         }
 
-        p {
-            font-size: 20px;
-            color: #7f8fa6;
+        .bat {
+            width: 32px;           /* Tamaño real del cuadro en el sprite */
+            height: 32px;
+            position: relative;
+            /* ⚠️ AQUÍ FALTABA LA IMAGEN - Usamos un placeholder */
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/16192/bat-sprite.png');
+            background-repeat: no-repeat;
+            /* Ajustamos la posición inicial */
+            transform: translate(-128px, -128px) scale(4);
+            /* step(6) significa que hay 6 cuadros en la imagen */
+            animation: flap 0.4s steps(6) infinite;
+        }
+
+        @keyframes flap {
+            to {
+                background-position: -192px 0; /* Mueve el fondo para mostrar los cuadros */
+            }
+        }
+
+        .contant_box_404 {
+            text-align: center;
+            color: #fff;
+            margin-top: 100px;
         }
 
         .link_404 {
             color: #fff !important;
-            padding: 10px 20px; /* Corregido */
+            padding: 10px 20px;
             background: #39ac31;
             margin: 20px 0;
             display: inline-block;
             text-decoration: none;
             border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .link_404:hover {
-            background: #2e8b26;
-        }
-
-        /* ANIMACIONES (Lo que faltaba en tu código) */
-        @keyframes eat {
-            0% { height: 20px; }
-            100% { height: 5px; } /* Cierra la boca */
-        }
-
-        @keyframes moveHead {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(10px); }
-        }
-
-        @keyframes moveCable {
-            0% { transform: translateX(0); opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { transform: translateX(-150px); opacity: 0; } /* El cable entra a la boca */
         }
     </style>
 </head>
 <body>
 
-    <!-- Animación del Cavernícola -->
-    <div class="animation_container">
-        <div class="caveman"></div>
-        <div class="cable"></div>
-    </div>
+    <!-- El elemento que el CSS va a animar -->
+    <div class="bat"></div>
 
-    <!-- Contenido de Texto -->
     <div class="contant_box_404">
         <h1>404</h1>
-        <p>¡Ñam! El cavernícola se comió tu página.</p>
+        <p>Página volando como un murciélago</p>
         <a href="/" class="link_404">Volver al Inicio</a>
     </div>
 
