@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>404 con Murciélago</title>
+    <title>Murciélago Animado</title>
     <style>
         body {
             background: #1a1a2e;
@@ -14,51 +14,24 @@
         }
 
         .bat {
-            width: 32px;           /* Tamaño real del cuadro en el sprite */
+            width: 32px;
             height: 32px;
-            position: relative;
-            /* ⚠️ AQUÍ FALTABA LA IMAGEN - Usamos un placeholder */
             background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/16192/bat-sprite.png');
             background-repeat: no-repeat;
-            /* Ajustamos la posición inicial */
-            transform: translate(-128px, -128px) scale(4);
-            /* step(6) significa que hay 6 cuadros en la imagen */
+            transform: scale(4);
             animation: flap 0.4s steps(6) infinite;
         }
 
         @keyframes flap {
             to {
-                background-position: -192px 0; /* Mueve el fondo para mostrar los cuadros */
+                background-position: -192px 0;
             }
-        }
-
-        .contant_box_404 {
-            text-align: center;
-            color: #fff;
-            margin-top: 100px;
-        }
-
-        .link_404 {
-            color: #fff !important;
-            padding: 10px 20px;
-            background: #39ac31;
-            margin: 20px 0;
-            display: inline-block;
-            text-decoration: none;
-            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- El elemento que el CSS va a animar -->
     <div class="bat"></div>
-
-    <div class="contant_box_404">
-        <h1>404</h1>
-        <p>Página volando como un murciélago</p>
-        <a href="/" class="link_404">Volver al Inicio</a>
-    </div>
 
 </body>
 </html>
