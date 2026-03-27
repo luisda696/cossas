@@ -1,10 +1,43 @@
-.link_404 {
- color: #fff !important;
- padding: 10px 20 px 
- background: #39ac31;
- margin: 20px 0;
- display: inline-block; 
-}
-.contant_box_404 {
- margin-top: -50px;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Error 404</title>
+    <style>
+        /* Aquí van tus estilos CSS */
+        .link_404 {
+            color: #fff !important;
+            padding: 10px 20px; /* Corregido el espacio */
+            background: #39ac31;
+            margin: 20px 0;
+            display: inline-block;
+            text-decoration: none; /* Para que el enlace no tenga subrayado */
+            border-radius: 5px; /* Un poco de borde redondeado opcional */
+        }
+
+        .contant_box_404 {
+            margin-top: -50px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        
+        body {
+            background-color: #f0f0f0; /* Fondo gris claro para que se note el botón */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Aquí está la estructura HTML que usa tus estilos -->
+    <div class="contant_box_404">
+        <h1>404 - Página no encontrada</h1>
+        <p>Lo sentimos, la página que buscas no existe.</p>
+        
+        <!-- Este es el botón que usa tu clase .link_404 -->
+        <a href="#" class="link_404">Volver al Inicio</a>
+    </div>
+
+</body>
+</html>
